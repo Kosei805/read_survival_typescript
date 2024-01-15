@@ -22,3 +22,47 @@
     - 小さなコンポーネントを組み合わせて大きなコンポーネントを作る
     - コンポーネントを再利用する
     - オープンソースのコンポーネントを使える
+
+## 開発
+
+- JavaScriptの中にXML(HTMLのようなもの)を直接書ける部分をJSXという
+- TypeScriptとは無関係だが、利便性のために搭載されている。
+
+```typescript
+import React from "react";
+import "./App.css";
+ 
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">TypeScriptはいいぞ</header>
+    </div>
+  );
+}
+ 
+export default App;
+```
+
+- ReactのJSXでは自分の関数をタグとして使うことができる
+- <~/></~>といった子要素を持たない場合は末尾を<~ />と書くことで短くできる。これはJSX特有である。
+
+```typescript
+import React from "react";
+import "./App.css";
+ 
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <LikeButton />
+      </header>
+    </div>
+  );
+}
+ 
+function LikeButton() {
+  return <span>いいねボタン予定地</span>;
+}
+ 
+export default App;
+```
